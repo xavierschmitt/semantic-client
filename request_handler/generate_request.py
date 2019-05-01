@@ -1,8 +1,7 @@
 from common.operation import FunctionMethod, Operation
 
 
-def generate_request():
-
+def _get_operation():
     inputs = "\n".join([e.value for e in FunctionMethod])
 
     method = raw_input("Input possible:\n"+inputs+"\nPlease enter the operation: ")
@@ -22,7 +21,19 @@ def generate_request():
         arg2 = int(arg2)
     except ValueError:
         pass
+    return Operation(method, arg1, arg2)
 
-    operation = Operation(method, arg1, arg2)
+def generate_request():
+
+    list_operation = []
+    list_operation.append(_get_operation())
+
+    # yn = raw_input("Do you want to add an operation ? (type Y is yes)")
+    # while yn == "Y":
+    #     list_operation.append(_get_operation())
+    #     yn = raw_input("Do you want to add an operation ? (type Y is yes)")
 
     # call PYKE with operation
+    from X import magic
+    magic.do_magic(list_operation)
+
