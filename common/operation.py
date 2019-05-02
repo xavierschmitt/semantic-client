@@ -19,7 +19,7 @@ class Type(Enum):
 
 class Operation:
 
-    def __init__(self, method, arg1, arg2):
+    def __init__(self, method, arg1=None, arg2=None):
         self.method = FunctionMethod(method)
         self.arg1 = arg1
         self.arg2 = arg2
