@@ -8,8 +8,6 @@ from enum import Enum
 class FunctionMethod(Enum):
     ADD = "add"
     SUB = "sub"
-    MUL = "mul"
-    DIV = "div"
 
 
 class Type(Enum):
