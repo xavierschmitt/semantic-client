@@ -1,0 +1,59 @@
+useA1
+    use findA($client)
+    when
+        functions.check_function($client, A, 1)
+        findB($client) as $b
+    with
+        print "A1"
+        $b()
+
+useB1
+    use findB($client)
+    when
+        functions.check_function($client, B, 1)
+        findC($client) as $c
+    with
+        from adapters.mdcs import addition as mdcs_addition, subtraction as mdcs_sub
+        print "B1 - mdcs_add a,b"
+        print mdcs_addition("a", "b")
+        $c()
+
+useB2
+    use findB($client)
+    when
+        functions.check_function($client, B, 2)
+        findD($client) as $d
+    with
+        from adapters.mdcs import addition as mdcs_addition, subtraction as mdcs_sub
+        print "B2 - mdcs_sub a,b"
+        print mdcs_sub("a", "b")
+        $d()
+
+useC1
+    use findC($client)
+    when
+        functions.check_function($client, C, 1)
+    with
+        from adapters.hyper_thought import addition as htadd, subtraction as htsub
+        print "C1 - ht_add 1,2"
+        print htadd(1, 2)
+
+useD1
+    use findD($client)
+    when
+        functions.check_function($client, D, 1)
+    with
+        from adapters.hyper_thought import addition as htadd, subtraction as htsub
+        print "D1 - htsub 1,2"
+        print htsub(1, 2)
+
+useD2
+    use findD($client)
+    when
+        functions.check_function($client, D, 2)
+    with
+        from adapters.material_commons import addition as mcadd, subtraction as mcsub
+        print "D2 - mcadd a,d"
+        print mcadd("a", "d")
+
+

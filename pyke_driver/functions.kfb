@@ -1,0 +1,7 @@
+# functions.kfb
+check_function(client1, A, 1)
+check_function(client1, B, 1)
+check_function(client2, B, 2)
+check_function(client1, C, 1)
+check_function(client2, D, 1)
+check_function(client3, D, 2)
